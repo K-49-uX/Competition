@@ -1,0 +1,38 @@
+name: CI
+
+# Protects against regressions in the donor-readiness feature set:
+# every push and PR runs lint, the server test suite (vitest +
+# mongodb-memory-server) and a client production build.
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    name: Lint + server tests + client build
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint client
+        run: npm run lint
+
+      - name: Server tests (vitest + mongodb-memory-server)
+        run: npm test
+        env:
+          NODE_ENV: test
+
+      - name: Client production build
+        run: npm run build

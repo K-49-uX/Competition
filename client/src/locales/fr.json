@@ -1,0 +1,237 @@
+{
+  "app": {
+    "name": "AfyaConnect",
+    "tagline": "L'accès aux soins pour tous"
+  },
+  "site": {
+    "home": "Accueil",
+    "findClinic": "Trouver une clinique",
+    "appointments": "Rendez-vous",
+    "about": "À propos",
+    "impact": "Impact",
+    "donate": "Faire un don",
+    "transparency": "Transparence",
+    "getStarted": "Commencer",
+    "platform": "Plateforme",
+    "account": "Compte",
+    "contact": "Contact",
+    "utility": "Ouvert 24/7 à Kakuma & Kalobeyei",
+    "builtFor": "Conçu pour l'accès aux soins des réfugiés"
+  },
+  "landing": {
+    "badge": "Approuvé par les cliniques de Kakuma & Kalobeyei",
+    "headline": "Des soins sans attente.",
+    "subhead": "Prenez rendez-vous, suivez votre file d'attente, trouvez des cliniques, et appelez à l'aide — dans votre langue.",
+    "openDashboard": "Ouvrir mon tableau de bord",
+    "browseClinics": "Voir les cliniques",
+    "stats": {
+      "clinics": "Cliniques partenaires",
+      "langs": "Langues",
+      "support": "Mises à jour en direct"
+    },
+    "featuresTitle": "Tout ce dont vous avez besoin en un seul endroit",
+    "featuresSub": "Conçu pour les zones à faible bande passante et les communautés multilingues.",
+    "features": {
+      "queue": {
+        "t": "Tickets en direct",
+        "b": "Obtenez un ticket numérique et suivez votre position en temps réel."
+      },
+      "clinics": {
+        "t": "Localiser une clinique",
+        "b": "Trouvez la clinique la plus proche sur une carte."
+      },
+      "sos": {
+        "t": "Urgence SOS",
+        "b": "Une touche alerte le personnel médical avec votre position."
+      },
+      "edu": {
+        "t": "Éducation à la santé",
+        "b": "Informations fiables sur l'hygiène, la nutrition et la santé maternelle."
+      },
+      "lang": {
+        "t": "Multilingue & RTL",
+        "b": "Anglais, Swahili, Français, Arabe avec mise en page RTL."
+      },
+      "secure": {
+        "t": "Sécurisé",
+        "b": "Comptes chiffrés et dossiers patients privés."
+      }
+    },
+    "howTitle": "Comment ça marche",
+    "steps": {
+      "register": {
+        "t": "Créez votre compte",
+        "b": "Inscrivez-vous en moins d'une minute."
+      },
+      "book": {
+        "t": "Prenez un ticket",
+        "b": "Choisissez une clinique et obtenez votre numéro."
+      },
+      "visit": {
+        "t": "Venez quand on vous appelle",
+        "b": "Suivez la file de partout."
+      }
+    },
+    "ctaTitle": "Prêt à reprendre le contrôle de vos soins?",
+    "ctaBody": "Gratuit. Sans paperasse. Fonctionne sur tout téléphone."
+  },
+  "about": {
+    "intro": "AfyaConnect a été conçu pour apporter l'accès numérique aux soins dans les camps de réfugiés.",
+    "mission": {
+      "t": "Notre mission",
+      "b": "Rendre les soins plus rapides et plus dignes pour tous."
+    },
+    "vision": {
+      "t": "Notre vision",
+      "b": "Un monde où personne n'attend des heures pour les soins dont il a besoin."
+    },
+    "values": {
+      "t": "Nos valeurs",
+      "b": "Inclusion, vie privée et confiance."
+    },
+    "outro": "Nous travaillons avec des cliniques, des ONG et des agents de santé communautaires."
+  },
+  "nav": {
+    "home": "Tableau",
+    "health": "Infos Santé",
+    "education": "Éducation",
+    "profile": "Profil",
+    "admin": "Admin",
+    "logout": "Déconnexion"
+  },
+  "auth": {
+    "login": "Connexion",
+    "register": "Nouveau Patient",
+    "phone": "Numéro de téléphone",
+    "refugeeId": "ID Réfugié",
+    "password": "Mot de passe",
+    "name": "Nom complet",
+    "haveAccount": "Déjà un compte?",
+    "noAccount": "Nouveau sur AfyaConnect?",
+    "submit": "Continuer",
+    "invalid": "Téléphone ou mot de passe invalide",
+    "registered": "Inscription réussie",
+    "email": "[NEEDS:fr] Email",
+    "identifier": "[NEEDS:fr] Phone or Email",
+    "identifierPlaceholder": "[NEEDS:fr] +254700000000 or you@example.com",
+    "newPassword": "[NEEDS:fr] New password",
+    "confirmPassword": "[NEEDS:fr] Confirm password",
+    "welcomeBack": "[NEEDS:fr] Welcome back",
+    "loginSub": "[NEEDS:fr] Sign in to manage your appointments and health.",
+    "joinTitle": "[NEEDS:fr] Your health journey starts here",
+    "joinSub": "[NEEDS:fr] Join thousands of patients getting faster, fairer care.",
+    "signupHint": "[NEEDS:fr] Sign up with your email or phone number.",
+    "phoneOrEmailHint": "[NEEDS:fr] Provide at least one — phone or email.",
+    "phoneOrEmailRequired": "[NEEDS:fr] Please provide a phone number or email.",
+    "phoneInUse": "[NEEDS:fr] That phone is already registered.",
+    "emailInUse": "[NEEDS:fr] That email is already registered.",
+    "benefit1": "[NEEDS:fr] Skip the line with digital tickets",
+    "benefit2": "[NEEDS:fr] Find the nearest clinic in seconds",
+    "benefit3": "[NEEDS:fr] Get help in your own language",
+    "forgot": "[NEEDS:fr] Forgot password?",
+    "forgotTitle": "[NEEDS:fr] Reset your password",
+    "forgotSub": "[NEEDS:fr] Enter your phone or email and we'll send you a reset link.",
+    "sendReset": "[NEEDS:fr] Send reset link",
+    "resetSent": "[NEEDS:fr] Check your inbox",
+    "resetSentBody": "[NEEDS:fr] If an account exists for that phone or email, a reset link is on its way.",
+    "devToken": "[NEEDS:fr] Developer mode",
+    "devTokenBody": "[NEEDS:fr] No email service is configured. Use this one-time token to reset your password now:",
+    "useToken": "[NEEDS:fr] Use this token now",
+    "backToLogin": "[NEEDS:fr] Back to log in",
+    "resetTitle": "[NEEDS:fr] Choose a new password",
+    "resetSub": "[NEEDS:fr] Paste the token you received and set a new password.",
+    "resetToken": "[NEEDS:fr] Reset token",
+    "resetSubmit": "[NEEDS:fr] Reset password",
+    "passwordReset": "[NEEDS:fr] Password updated. You're signed in.",
+    "passwordMismatch": "[NEEDS:fr] Passwords do not match.",
+    "tokenInvalid": "[NEEDS:fr] This reset token is invalid or has expired.",
+    "show": "[NEEDS:fr] Show",
+    "hide": "[NEEDS:fr] Hide",
+    "showPassword": "[NEEDS:fr] Show password",
+    "hidePassword": "[NEEDS:fr] Hide password"
+  },
+  "home": {
+    "welcome": "Bienvenue, {{name}}",
+    "bookAppointment": "Prendre RDV",
+    "clinicLocator": "Localiser une clinique",
+    "yourTurn": "Votre Tour",
+    "estimatedWait": "Attente: {{minutes}} min",
+    "noAppointment": "Aucun rendez-vous actif",
+    "announcements": "Annonces",
+    "subtitle": "[NEEDS:fr] Here's what's happening with your care today.",
+    "viewLive": "[NEEDS:fr] Tap to see live queue progress.",
+    "eduTeaser": "[NEEDS:fr] Bite-sized lessons on staying healthy.",
+    "exploreEdu": "[NEEDS:fr] Explore lessons"
+  },
+  "queue": {
+    "title": "File en direct",
+    "ticketNumber": "Ticket #{{n}}",
+    "nowServing": "En cours #{{n}}",
+    "ahead": "{{n}} personnes avant vous",
+    "cancel": "Annuler le RDV",
+    "book": "Nouveau ticket",
+    "selectClinic": "Choisir la clinique",
+    "noClinics": "Aucune clinique"
+  },
+  "clinics": {
+    "title": "Trouver une clinique",
+    "directions": "Itinéraire",
+    "open": "Ouvert: {{hours}}",
+    "services": "Services",
+    "useLocation": "Utiliser ma position"
+  },
+  "education": {
+    "title": "Éducation à la santé",
+    "categories": {
+      "hygiene": "Hygiène",
+      "nutrition": "Nutrition",
+      "maternal": "Santé maternelle",
+      "general": "Général"
+    },
+    "intro": "[NEEDS:fr] Trusted, evidence-based health information — reviewed against guidance from leading global health organisations. Tap any topic to read more and see the original sources.",
+    "sources": "[NEEDS:fr] Sources",
+    "all": "[NEEDS:fr] All topics",
+    "readMore": "[NEEDS:fr] Read more",
+    "backToList": "[NEEDS:fr] Back to all topics",
+    "keyFacts": "[NEEDS:fr] Key facts",
+    "learnMore": "[NEEDS:fr] Learn more",
+    "resourcesTitle": "[NEEDS:fr] Trusted resources",
+    "resourcesSub": "[NEEDS:fr] Research and guidance from WHO, UNHCR and partner health organisations.",
+    "disclaimer": "[NEEDS:fr] External links open on the partner organisation’s own website. AfyaConnect is not responsible for the content of external sites. For personal medical advice, speak to a clinician."
+  },
+  "profile": {
+    "title": "Profil",
+    "language": "Langue",
+    "history": "Historique des RDV",
+    "save": "Enregistrer",
+    "saved": "Profil mis à jour"
+  },
+  "sos": {
+    "button": "URGENCE",
+    "confirmTitle": "Envoyer une alerte?",
+    "confirmBody": "Le personnel médical sera prévenu immédiatement avec votre position.",
+    "send": "Envoyer SOS",
+    "cancel": "Annuler",
+    "sent": "Les secours arrivent",
+    "failed": "Échec de l'envoi",
+    "short": "[NEEDS:fr] SOS"
+  },
+  "admin": {
+    "title": "Tableau de bord",
+    "tabs": {
+      "queues": "Files en direct",
+      "sos": "Flux SOS",
+      "campaigns": "Campagnes"
+    },
+    "advance": "Suivant",
+    "campaignTitle": "Titre",
+    "campaignMessage": "Message",
+    "audience": "Public",
+    "send": "Diffuser"
+  },
+  "common": {
+    "loading": "Chargement...",
+    "error": "Une erreur est survenue",
+    "retry": "Réessayer"
+  }
+}

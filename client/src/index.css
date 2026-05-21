@@ -1,0 +1,217 @@
+@import 'leaflet/dist/leaflet.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ----------------------------------------------------------------------------
+   AfyaConnect global styles
+   Hospital-recommended palette: blue (trust) + teal (healing) + soft pink (care)
+   Full dark-mode support via the `.dark` class on <html>.
+   Dark-surface tones use literal values to avoid config-cache issues:
+     #0b1220  base    | #111a2e  raised    | #1a2542  elevated
+   --------------------------------------------------------------------------- */
+
+@layer base {
+  html {
+    font-family: 'Inter', 'Roboto', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-neutral-50 text-neutral-900 min-h-screen antialiased transition-colors duration-200;
+  }
+  .dark body {
+    background-color: #0b1220;
+    @apply text-slate-100;
+  }
+
+  html[dir='rtl'] { text-align: right; }
+
+  ::selection {
+    @apply bg-primary/20 text-primary-900;
+  }
+  .dark ::selection {
+    @apply bg-accent/30 text-white;
+  }
+
+  /* Scrollbar polish */
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-track { @apply bg-neutral-100; }
+  ::-webkit-scrollbar-thumb { @apply bg-neutral-300 rounded-full; }
+  ::-webkit-scrollbar-thumb:hover { @apply bg-neutral-400; }
+  .dark ::-webkit-scrollbar-track { background-color: #111a2e; }
+  .dark ::-webkit-scrollbar-thumb { @apply bg-slate-700; }
+  .dark ::-webkit-scrollbar-thumb:hover { @apply bg-slate-600; }
+
+  h1, h2, h3, h4 { @apply tracking-tight; }
+}
+
+@layer components {
+  /* ---------- Buttons ---------- */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2.5 font-semibold
+           transition-all duration-150 active:scale-[0.97]
+           disabled:opacity-50 disabled:cursor-not-allowed
+           focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2
+           focus-visible:ring-primary/60;
+  }
+  .dark .btn { --tw-ring-offset-color: #0b1220; }
+
+  .btn-primary {
+    @apply btn bg-primary text-white shadow-sm hover:bg-primary-600 hover:shadow-md;
+  }
+  .btn-accent  { @apply btn bg-accent text-white shadow-sm hover:bg-accent-600; }
+  .btn-care    { @apply btn bg-care text-white shadow-sm hover:bg-care-600; }
+  .btn-success { @apply btn bg-success text-white shadow-sm hover:bg-success-600; }
+  .btn-danger  { @apply btn bg-danger  text-white shadow-sm hover:bg-danger-600; }
+
+  .btn-outline {
+    @apply btn border-2 border-primary text-primary bg-transparent
+           hover:bg-primary-50;
+  }
+  .dark .btn-outline {
+    @apply border-accent text-accent hover:bg-accent/10;
+  }
+
+  .btn-ghost {
+    @apply btn bg-transparent text-neutral-700 hover:bg-neutral-100;
+  }
+  .dark .btn-ghost {
+    @apply text-slate-200 hover:bg-slate-800;
+  }
+
+  /* ---------- Cards ---------- */
+  .card {
+    @apply bg-white rounded-card p-5 shadow-card border-l-4 border-primary
+           transition-all duration-200;
+  }
+  .card:hover { @apply -translate-y-0.5 shadow-card-hover; }
+
+  .dark .card {
+    background-color: #111a2e;
+    @apply border-accent shadow-none ring-1 ring-slate-800;
+  }
+  .dark .card:hover { @apply ring-slate-700; }
+
+  .card-flat {
+    @apply bg-white rounded-card p-5 shadow-card border border-neutral-100 transition-colors;
+  }
+  .dark .card-flat {
+    background-color: #111a2e;
+    @apply border-slate-800;
+  }
+
+  /* ---------- Inputs ---------- */
+  .input {
+    @apply w-full rounded-lg border border-neutral-200 bg-white px-4 py-3 text-base
+           text-neutral-900 placeholder:text-neutral-400
+           focus:border-primary focus:ring-2 focus:ring-primary/30 focus:outline-none
+           transition-colors;
+  }
+  .dark .input {
+    background-color: #111a2e;
+    @apply border-slate-700 text-slate-100 placeholder:text-slate-500
+           focus:border-accent focus:ring-accent/30;
+  }
+
+  .label {
+    @apply block text-sm font-semibold text-neutral-800 mb-1;
+  }
+  .dark .label { @apply text-slate-200; }
+
+  .help-text {
+    @apply text-xs text-neutral-500 mt-1;
+  }
+  .dark .help-text { @apply text-slate-400; }
+
+  /* ---------- Chips / badges ---------- */
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-pill px-2.5 py-1 text-xs font-semibold;
+  }
+  .chip-primary { @apply chip bg-primary-50 text-primary-700; }
+  .chip-accent  { @apply chip bg-accent-50  text-accent-700; }
+  .chip-care    { @apply chip bg-care-50    text-care-600; }
+  .chip-success { @apply chip bg-success-50 text-success-600; }
+  .chip-warning { @apply chip bg-warning-50 text-warning-600; }
+  .chip-danger  { @apply chip bg-danger-50  text-danger-600; }
+
+  .dark .chip-primary { @apply bg-primary-900/40 text-primary-200; }
+  .dark .chip-accent  { @apply bg-accent-700/30 text-accent-100; }
+  .dark .chip-care    { @apply bg-care-600/20  text-care-100; }
+
+  /* ---------- Surfaces ---------- */
+  .surface {
+    @apply bg-white border border-neutral-100;
+  }
+  .dark .surface {
+    background-color: #111a2e;
+    @apply border-slate-800;
+  }
+
+  /* ---------- Nav item (used by bottom nav) ---------- */
+  .nav-item {
+    @apply flex flex-col items-center justify-center gap-1 text-xs font-medium
+           text-neutral-900/60 py-2 px-3 rounded-lg transition-colors;
+  }
+  .nav-item.active { @apply text-primary bg-primary-50; }
+  .dark .nav-item { @apply text-slate-400; }
+  .dark .nav-item.active { @apply text-accent bg-accent/10; }
+
+  /* ---------- Section headings ---------- */
+  .section-title {
+    @apply text-2xl md:text-3xl font-extrabold text-neutral-900 tracking-tight;
+  }
+  .dark .section-title { @apply text-white; }
+
+  .section-sub {
+    @apply text-base text-neutral-600 mt-1;
+  }
+  .dark .section-sub { @apply text-slate-400; }
+
+  /* ---------- Hero gradient ---------- */
+  .hero-gradient {
+    background-color: #0056b3; /* solid fallback so white text always reads */
+    background-image: linear-gradient(135deg, #0056b3 0%, #0d9488 50%, #14b8a6 100%);
+    color: #ffffff;
+  }
+  .hero-gradient * { color: inherit; }
+  .dark .hero-gradient {
+    background-color: #00224d;
+    background-image: linear-gradient(135deg, #00224d 0%, #0f766e 50%, #134e4a 100%);
+  }
+}
+
+/* ---------- Leaflet map sizing ---------- */
+.leaflet-container {
+  @apply rounded-card;
+  height: 100%;
+  min-height: 320px;
+}
+.dark .leaflet-container { filter: brightness(0.85) contrast(1.05); }
+
+/* ---------- RTL nudges ---------- */
+html[dir='rtl'] .card { border-left: 0; border-right: 4px solid #0056b3; }
+html[dir='rtl'].dark .card { border-right-color: #14b8a6; }
+
+/* ---------- Page-level dark fallbacks ---------- */
+.dark header,
+.dark footer,
+.dark nav,
+.dark aside { color-scheme: dark; }
+
+/* Generic surface overrides so existing pages without `dark:` variants still look right */
+.dark .bg-white         { background-color: #111a2e !important; }
+.dark .bg-neutral-50    { background-color: #0b1220 !important; }
+.dark .bg-neutral-100   { background-color: #1a2542 !important; }
+.dark .text-neutral-900 { color: #e2e8f0 !important; }
+.dark .text-neutral-800 { color: #cbd5e1 !important; }
+.dark .text-neutral-700 { color: #94a3b8 !important; }
+.dark .text-neutral-600 { color: #94a3b8 !important; }
+.dark .border-neutral-50,
+.dark .border-neutral-100,
+.dark .border-neutral-200 { border-color: #1e293b !important; }
+
+/* Keep the bright primary navbar utility strip readable in dark mode */
+.dark .bg-primary { background-color: #003066 !important; }

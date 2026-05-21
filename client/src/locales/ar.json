@@ -1,0 +1,237 @@
+{
+  "app": {
+    "name": "أفيا كونكت",
+    "tagline": "الرعاية الصحية للجميع"
+  },
+  "site": {
+    "home": "الرئيسية",
+    "findClinic": "ابحث عن عيادة",
+    "appointments": "المواعيد",
+    "about": "حول",
+    "impact": "الأثر",
+    "donate": "تبرع",
+    "transparency": "الشفافية",
+    "getStarted": "ابدأ الآن",
+    "platform": "المنصة",
+    "account": "الحساب",
+    "contact": "اتصل بنا",
+    "utility": "مفتوح 24/7 في كاكوما وكالوبييي",
+    "builtFor": "مصمم لتسهيل الرعاية الصحية للاجئين"
+  },
+  "landing": {
+    "badge": "موثوق به في عيادات كاكوما وكالوبييي",
+    "headline": "رعاية صحية بدون انتظار.",
+    "subhead": "احجز مواعيد، تابع دورك في الطابور، ابحث عن العيادات، واطلب المساعدة الطارئة — بلغتك.",
+    "openDashboard": "افتح لوحتي",
+    "browseClinics": "تصفح العيادات",
+    "stats": {
+      "clinics": "عيادات شريكة",
+      "langs": "لغات",
+      "support": "تحديثات مباشرة"
+    },
+    "featuresTitle": "كل ما تحتاجه في مكان واحد",
+    "featuresSub": "مصمم للمناطق ذات النطاق الترددي المنخفض والمجتمعات متعددة اللغات.",
+    "features": {
+      "queue": {
+        "t": "تذاكر مباشرة",
+        "b": "احصل على تذكرة رقمية وتابع موقعك مباشرة."
+      },
+      "clinics": {
+        "t": "محدد العيادات",
+        "b": "ابحث عن أقرب عيادة على الخريطة."
+      },
+      "sos": {
+        "t": "طوارئ SOS",
+        "b": "لمسة واحدة تنبه الطاقم الطبي بموقعك."
+      },
+      "edu": {
+        "t": "التثقيف الصحي",
+        "b": "معلومات موثوقة عن النظافة والتغذية وصحة الأم."
+      },
+      "lang": {
+        "t": "متعدد اللغات و RTL",
+        "b": "دعم كامل للإنجليزية والسواحلية والفرنسية والعربية."
+      },
+      "secure": {
+        "t": "آمن بتصميمه",
+        "b": "حسابات مشفرة وسجلات مرضى خاصة."
+      }
+    },
+    "howTitle": "كيف يعمل",
+    "steps": {
+      "register": {
+        "t": "أنشئ حسابك",
+        "b": "سجل برقم هاتفك في أقل من دقيقة."
+      },
+      "book": {
+        "t": "احجز تذكرة",
+        "b": "اختر عيادة واحصل على رقمك فوراً."
+      },
+      "visit": {
+        "t": "اذهب عند ندائك",
+        "b": "تابع الطابور من أي مكان."
+      }
+    },
+    "ctaTitle": "جاهز للسيطرة على رعايتك؟",
+    "ctaBody": "مجاني. بدون أوراق. يعمل على أي هاتف."
+  },
+  "about": {
+    "intro": "تم بناء أفيا كونكت لتقديم الرعاية الصحية الرقمية لمخيمات اللاجئين.",
+    "mission": {
+      "t": "مهمتنا",
+      "b": "جعل الرعاية أسرع وأكثر كرامة للجميع."
+    },
+    "vision": {
+      "t": "رؤيتنا",
+      "b": "عالم لا ينتظر فيه أحد ساعات للحصول على الرعاية."
+    },
+    "values": {
+      "t": "قيمنا",
+      "b": "الشمول والخصوصية والثقة."
+    },
+    "outro": "نتعاون مع العيادات والمنظمات غير الحكومية والعاملين الصحيين."
+  },
+  "nav": {
+    "home": "اللوحة",
+    "health": "معلومات صحية",
+    "education": "التثقيف",
+    "profile": "الملف",
+    "admin": "المسؤول",
+    "logout": "خروج"
+  },
+  "auth": {
+    "login": "تسجيل الدخول",
+    "register": "تسجيل مريض جديد",
+    "phone": "رقم الهاتف",
+    "refugeeId": "رقم اللاجئ",
+    "password": "كلمة المرور",
+    "name": "الاسم الكامل",
+    "haveAccount": "لديك حساب بالفعل؟",
+    "noAccount": "جديد على أفيا كونكت؟",
+    "submit": "متابعة",
+    "invalid": "هاتف أو كلمة مرور خاطئة",
+    "registered": "تم التسجيل بنجاح",
+    "email": "[NEEDS:ar] Email",
+    "identifier": "[NEEDS:ar] Phone or Email",
+    "identifierPlaceholder": "[NEEDS:ar] +254700000000 or you@example.com",
+    "newPassword": "[NEEDS:ar] New password",
+    "confirmPassword": "[NEEDS:ar] Confirm password",
+    "welcomeBack": "[NEEDS:ar] Welcome back",
+    "loginSub": "[NEEDS:ar] Sign in to manage your appointments and health.",
+    "joinTitle": "[NEEDS:ar] Your health journey starts here",
+    "joinSub": "[NEEDS:ar] Join thousands of patients getting faster, fairer care.",
+    "signupHint": "[NEEDS:ar] Sign up with your email or phone number.",
+    "phoneOrEmailHint": "[NEEDS:ar] Provide at least one — phone or email.",
+    "phoneOrEmailRequired": "[NEEDS:ar] Please provide a phone number or email.",
+    "phoneInUse": "[NEEDS:ar] That phone is already registered.",
+    "emailInUse": "[NEEDS:ar] That email is already registered.",
+    "benefit1": "[NEEDS:ar] Skip the line with digital tickets",
+    "benefit2": "[NEEDS:ar] Find the nearest clinic in seconds",
+    "benefit3": "[NEEDS:ar] Get help in your own language",
+    "forgot": "[NEEDS:ar] Forgot password?",
+    "forgotTitle": "[NEEDS:ar] Reset your password",
+    "forgotSub": "[NEEDS:ar] Enter your phone or email and we'll send you a reset link.",
+    "sendReset": "[NEEDS:ar] Send reset link",
+    "resetSent": "[NEEDS:ar] Check your inbox",
+    "resetSentBody": "[NEEDS:ar] If an account exists for that phone or email, a reset link is on its way.",
+    "devToken": "[NEEDS:ar] Developer mode",
+    "devTokenBody": "[NEEDS:ar] No email service is configured. Use this one-time token to reset your password now:",
+    "useToken": "[NEEDS:ar] Use this token now",
+    "backToLogin": "[NEEDS:ar] Back to log in",
+    "resetTitle": "[NEEDS:ar] Choose a new password",
+    "resetSub": "[NEEDS:ar] Paste the token you received and set a new password.",
+    "resetToken": "[NEEDS:ar] Reset token",
+    "resetSubmit": "[NEEDS:ar] Reset password",
+    "passwordReset": "[NEEDS:ar] Password updated. You're signed in.",
+    "passwordMismatch": "[NEEDS:ar] Passwords do not match.",
+    "tokenInvalid": "[NEEDS:ar] This reset token is invalid or has expired.",
+    "show": "[NEEDS:ar] Show",
+    "hide": "[NEEDS:ar] Hide",
+    "showPassword": "[NEEDS:ar] Show password",
+    "hidePassword": "[NEEDS:ar] Hide password"
+  },
+  "home": {
+    "welcome": "مرحباً، {{name}}",
+    "bookAppointment": "حجز موعد",
+    "clinicLocator": "ابحث عن عيادة",
+    "yourTurn": "دورك",
+    "estimatedWait": "الانتظار المتوقع: {{minutes}} دقيقة",
+    "noAppointment": "لا يوجد موعد نشط",
+    "announcements": "الإعلانات",
+    "subtitle": "[NEEDS:ar] Here's what's happening with your care today.",
+    "viewLive": "[NEEDS:ar] Tap to see live queue progress.",
+    "eduTeaser": "[NEEDS:ar] Bite-sized lessons on staying healthy.",
+    "exploreEdu": "[NEEDS:ar] Explore lessons"
+  },
+  "queue": {
+    "title": "قائمة الانتظار المباشرة",
+    "ticketNumber": "تذكرة رقم {{n}}",
+    "nowServing": "يتم الآن خدمة رقم {{n}}",
+    "ahead": "{{n}} أمامك",
+    "cancel": "إلغاء الموعد",
+    "book": "تذكرة جديدة",
+    "selectClinic": "اختر عيادة",
+    "noClinics": "لا توجد عيادات"
+  },
+  "clinics": {
+    "title": "ابحث عن عيادة",
+    "directions": "احصل على الاتجاهات",
+    "open": "مفتوح: {{hours}}",
+    "services": "الخدمات",
+    "useLocation": "استخدم موقعي"
+  },
+  "education": {
+    "title": "التثقيف الصحي",
+    "categories": {
+      "hygiene": "النظافة",
+      "nutrition": "التغذية",
+      "maternal": "صحة الأم",
+      "general": "عام"
+    },
+    "intro": "[NEEDS:ar] Trusted, evidence-based health information — reviewed against guidance from leading global health organisations. Tap any topic to read more and see the original sources.",
+    "sources": "[NEEDS:ar] Sources",
+    "all": "[NEEDS:ar] All topics",
+    "readMore": "[NEEDS:ar] Read more",
+    "backToList": "[NEEDS:ar] Back to all topics",
+    "keyFacts": "[NEEDS:ar] Key facts",
+    "learnMore": "[NEEDS:ar] Learn more",
+    "resourcesTitle": "[NEEDS:ar] Trusted resources",
+    "resourcesSub": "[NEEDS:ar] Research and guidance from WHO, UNHCR and partner health organisations.",
+    "disclaimer": "[NEEDS:ar] External links open on the partner organisation’s own website. AfyaConnect is not responsible for the content of external sites. For personal medical advice, speak to a clinician."
+  },
+  "profile": {
+    "title": "الملف الشخصي",
+    "language": "اللغة",
+    "history": "سجل المواعيد",
+    "save": "حفظ التغييرات",
+    "saved": "تم تحديث الملف"
+  },
+  "sos": {
+    "button": "طوارئ",
+    "confirmTitle": "إرسال إنذار طوارئ؟",
+    "confirmBody": "سيتم إخطار الطاقم الطبي فوراً بموقعك.",
+    "send": "إرسال SOS",
+    "cancel": "إلغاء",
+    "sent": "المساعدة في الطريق",
+    "failed": "تعذر إرسال الإنذار",
+    "short": "[NEEDS:ar] SOS"
+  },
+  "admin": {
+    "title": "لوحة المسؤول",
+    "tabs": {
+      "queues": "الطوابير المباشرة",
+      "sos": "تدفق الطوارئ",
+      "campaigns": "الحملات"
+    },
+    "advance": "نداء التالي",
+    "campaignTitle": "العنوان",
+    "campaignMessage": "الرسالة",
+    "audience": "الجمهور",
+    "send": "إرسال"
+  },
+  "common": {
+    "loading": "جارٍ التحميل...",
+    "error": "حدث خطأ",
+    "retry": "إعادة المحاولة"
+  }
+}
