@@ -57,9 +57,9 @@ export function AdminShell() {
         </div>
       </aside>
 
-      <div className="flex flex-col">
-        <header className="bg-white px-6 py-3 flex justify-between items-center shadow-sm">
-          <NavLink to="/" className="text-sm text-primary underline">
+      <div className="flex flex-col bg-neutral-50 dark:bg-[#0b1220]">
+        <header className="bg-white dark:bg-[#111a2e] dark:border-b dark:border-slate-800 px-6 py-3 flex justify-between items-center shadow-sm">
+          <NavLink to="/" className="text-sm text-primary dark:text-accent underline">
             ← {t('nav.home')}
           </NavLink>
           <div className="flex items-center gap-2">

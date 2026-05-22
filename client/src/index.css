@@ -205,9 +205,21 @@ html[dir='rtl'].dark .card { border-right-color: #14b8a6; }
 .dark .bg-white         { background-color: #111a2e !important; }
 .dark .bg-neutral-50    { background-color: #0b1220 !important; }
 .dark .bg-neutral-100   { background-color: #1a2542 !important; }
+.dark .bg-neutral-200   { background-color: #1e293b !important; }
 .dark .text-neutral-900 { color: #e2e8f0 !important; }
 .dark .text-neutral-800 { color: #cbd5e1 !important; }
 .dark .text-neutral-700 { color: #94a3b8 !important; }
+.dark .text-neutral-600 { color: #cbd5e1 !important; }
+.dark .text-neutral-500 { color: #94a3b8 !important; }
+.dark .text-neutral-400 { color: #64748b !important; }
+.dark .border-neutral-50,
+.dark .border-neutral-100,
+.dark .border-neutral-200 { border-color: #1e293b !important; }
+
+/* Tables inside dark mode — admin pages use plain <table> with neutral headers */
+.dark thead.bg-neutral-50,
+.dark thead.bg-neutral-100 { background-color: #1a2542 !important; }
+.dark tbody tr { border-color: #1e293b; }
 .dark .text-neutral-600 { color: #94a3b8 !important; }
 .dark .border-neutral-50,
 .dark .border-neutral-100,

@@ -1,8 +1,9 @@
-import { useQuery } from '@tanstack/react-query';
+import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { Link } from 'react-router-dom';
 import {
   Activity, AlertTriangle, CalendarCheck, ClipboardList,
   Hospital, Pill, Users, Loader2, Download, Printer,
+  Building2, BookOpen, Languages, Siren, RefreshCw,
 } from 'lucide-react';
 import { api, openAuthenticatedHtml } from '../../api/client.js';
 import { useAuth } from '../../auth/AuthProvider.jsx';
@@ -33,6 +34,23 @@ export default function AdminDashboard() {
         .get('/admin/overview', { params: selectedClinic ? { clinicId: selectedClinic } : {} })
         .then((r) => r.data),
     refetchInterval: 30_000,
+  });
+
+  // Platform-wide totals (superadmin only). Powered by the same MetricSnapshot
+  // the public Impact page uses, so the number matches what donors see.
+  const platformQuery = useQuery({
+    queryKey: ['admin-metrics-platform'],
+    queryFn: () => api.get('/metrics/admin').then((r) => r.data),
+    enabled: isSuper,
+    staleTime: 60_000,
+  });
+
+  const qc = useQueryClient();
+  const refreshSnapshot = useMutation({
+    mutationFn: () => api.post('/metrics/snapshot').then((r) => r.data),
+    onSuccess: () => {
+      qc.invalidateQueries({ queryKey: ['admin-metrics-platform'] });
+    },
   });
 
   function setClinic(id) {
@@ -131,6 +149,14 @@ export default function AdminDashboard() {
         </div>
       </div>
 
+      {isSuper && (
+        <PlatformTotals
+          query={platformQuery}
+          onRefresh={() => refreshSnapshot.mutate()}
+          refreshing={refreshSnapshot.isPending}
+        />
+      )}
+
       <div className="text-xs text-neutral-400 text-right flex items-center justify-end gap-3">
         <button
           type="button"
@@ -220,6 +246,76 @@ function Row({ label, value }) {
     <div className="flex justify-between border-b border-neutral-50 pb-1 last:border-0">
       <span className="text-neutral-500">{label}</span>
       <span className="font-semibold">{value}</span>
+    </div>
+  );
+}
+
+// Superadmin-only platform rollup. Reads from /metrics/admin (same snapshot
+// the public /impact page renders) and exposes a "Refresh now" button that
+// hits POST /metrics/snapshot to rebuild today's row on demand.
+function PlatformTotals({ query, onRefresh, refreshing }) {
+  const snap = query.data?.snapshot;
+  const counts = snap?.counts || {};
+  const generatedAt = snap?.updatedAt || snap?.createdAt;
+
+  const tiles = [
+    { key: 'patientsTotal', label: 'Patients registered', icon: Users },
+    { key: 'appointmentsTotal', label: 'Appointments booked', icon: CalendarCheck },
+    { key: 'sosTotal', label: 'Emergency alerts', icon: Siren },
+    { key: 'clinics', label: 'Partner clinics', icon: Building2 },
+    { key: 'educationTopics', label: 'Health topics', icon: BookOpen },
+    { key: 'languagesServed', label: 'Languages served', icon: Languages },
+  ];
+
+  return (
+    <div className="card">
+      <div className="flex items-start justify-between gap-3 mb-3">
+        <div>
+          <h2 className="font-bold inline-flex items-center gap-2">
+            <Activity size={16} className="text-primary" /> Platform totals
+          </h2>
+          <p className="text-xs text-neutral-500 mt-0.5">
+            Across every clinic. Same numbers shown on the public Impact page.
+          </p>
+        </div>
+        <button
+          type="button"
+          onClick={onRefresh}
+          disabled={refreshing}
+          className="inline-flex items-center gap-1.5 text-sm text-primary font-semibold hover:underline disabled:opacity-60"
+        >
+          <RefreshCw size={14} className={refreshing ? 'animate-spin' : ''} />
+          {refreshing ? 'Refreshing…' : 'Refresh now'}
+        </button>
+      </div>
+
+      {query.isPending ? (
+        <div className="py-6 grid place-items-center text-neutral-400">
+          <Loader2 size={20} className="animate-spin" />
+        </div>
+      ) : query.isError ? (
+        <div className="text-sm text-danger">Could not load platform totals.</div>
+      ) : (
+        <>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
+            {tiles.map(({ key, label, icon: Icon }) => (
+              <div key={key} className="rounded-lg border border-neutral-100 dark:border-slate-700 p-3">
+                <Icon size={16} className="text-primary mb-1.5" />
+                <div className="text-2xl font-extrabold tabular-nums">
+                  {Number(counts[key] || 0).toLocaleString()}
+                </div>
+                <div className="text-[11px] uppercase tracking-wide text-neutral-500 leading-tight">
+                  {label}
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="mt-3 text-xs text-neutral-400">
+            {snap?.day ? `Snapshot for ${snap.day}` : 'No snapshot yet'}
+            {generatedAt ? ` · updated ${new Date(generatedAt).toLocaleString()}` : ''}
+          </div>
+        </>
+      )}
     </div>
   );
 }
