@@ -220,6 +220,15 @@ html[dir='rtl'].dark .card { border-right-color: #14b8a6; }
 .dark thead.bg-neutral-50,
 .dark thead.bg-neutral-100 { background-color: #1a2542 !important; }
 .dark tbody tr { border-color: #1e293b; }
+
+/* Alpha variants like `text-neutral-900/70` collapse to near-black on a dark
+   surface. Map them to slate tones so admin pages that lean on these
+   (Onboarding, SOS, Queues, Campaigns) stay legible. */
+.dark .text-neutral-900\/80 { color: #e2e8f0 !important; }
+.dark .text-neutral-900\/70 { color: #cbd5e1 !important; }
+.dark .text-neutral-900\/60 { color: #94a3b8 !important; }
+.dark .text-neutral-900\/50 { color: #64748b !important; }
+.dark .text-rose-900\/80    { color: #fda4af !important; }
 .dark .text-neutral-600 { color: #94a3b8 !important; }
 .dark .border-neutral-50,
 .dark .border-neutral-100,
