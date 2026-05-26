@@ -10,7 +10,7 @@
     "dev": "concurrently -n server,client -c blue,green \"npm:dev -w server\" \"npm:dev -w client\"",
     "build": "npm run build -w client",
     "start": "npm run start -w server",
-    "render-build": "npm install && npm run build -w client && npm run seed:if-empty -w server",
+    "render-build": "npm install --include=dev && npm run build -w client && npm run seed:if-empty -w server",
     "lint": "npm run lint -w client",
     "seed": "npm run seed -w server",
     "test": "npm run test -w server",
