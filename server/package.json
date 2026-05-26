@@ -9,6 +9,7 @@
     "start": "node src/index.js",
     "start:cluster": "node src/cluster.js",
     "seed": "node src/seed.js",
+    "seed:if-empty": "node scripts/seed-if-empty.mjs",
     "seed:clinic": "node scripts/seed-clinic.mjs",
     "lint": "eslint .",
     "test": "vitest run",
