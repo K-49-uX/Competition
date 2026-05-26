@@ -280,8 +280,26 @@ export function SiteShell() {
               <li className="flex items-center gap-2">
                 <Mail size={14} />
                 <a
-                  href="mailto:kevinkeygahungu2@gmail.com"
-                  className="hover:text-white underline-offset-2 hover:underline"
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=kevinkeygahungu2@gmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => {
+                    // Prefer the user's native mail client if one is registered;
+                    // otherwise fall back to opening Gmail web compose in a new tab.
+                    e.preventDefault();
+                    const mailto = 'mailto:kevinkeygahungu2@gmail.com';
+                    const gmail =
+                      'https://mail.google.com/mail/?view=cm&fs=1&to=kevinkeygahungu2@gmail.com';
+                    const win = window.open(mailto, '_self');
+                    // If mailto failed to navigate (no handler), open Gmail in a new tab.
+                    setTimeout(() => {
+                      if (document.visibilityState === 'visible') {
+                        window.open(gmail, '_blank', 'noopener,noreferrer');
+                      }
+                    }, 500);
+                    return win;
+                  }}
+                  className="hover:text-white underline-offset-2 hover:underline cursor-pointer"
                 >
                   kevinkeygahungu2@gmail.com
                 </a>
