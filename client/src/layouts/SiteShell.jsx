@@ -276,8 +276,8 @@ export function SiteShell() {
             <h4 className="font-bold mb-3 text-sm uppercase tracking-wide">{t('site.contact')}</h4>
             <ul className="space-y-2 text-sm text-white/80">
               <li className="flex items-center gap-2"><MapPin size={14} /> Kakuma Refugee Camp, Kenya</li>
-              <li className="flex items-center gap-2"><Phone size={14} /> +254 700 000 000</li>
-              <li className="flex items-center gap-2"><Mail size={14} /> help@afyaconnect.org</li>
+              <li className="flex items-center gap-2"><Phone size={14} /> +254706583970</li>
+              <li className="flex items-center gap-2"><Mail size={14} /> kevinkeygahungu2@gmail.com</li>
             </ul>
           </div>
         </div>
