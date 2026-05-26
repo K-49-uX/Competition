@@ -277,7 +277,15 @@ export function SiteShell() {
             <ul className="space-y-2 text-sm text-white/80">
               <li className="flex items-center gap-2"><MapPin size={14} /> Kakuma Refugee Camp, Kenya</li>
               <li className="flex items-center gap-2"><Phone size={14} /> +254706583970</li>
-              <li className="flex items-center gap-2"><Mail size={14} /> kevinkeygahungu2@gmail.com</li>
+              <li className="flex items-center gap-2">
+                <Mail size={14} />
+                <a
+                  href="mailto:kevinkeygahungu2@gmail.com"
+                  className="hover:text-white underline-offset-2 hover:underline"
+                >
+                  kevinkeygahungu2@gmail.com
+                </a>
+              </li>
             </ul>
           </div>
         </div>
