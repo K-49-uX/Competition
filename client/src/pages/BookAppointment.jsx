@@ -24,6 +24,7 @@ import {
 import { api } from '../api/client.js';
 import { getSocket } from '../realtime/socket.js';
 import { useDocumentTitle } from '../hooks/useDocumentTitle.js';
+import { useAuth } from '../auth/AuthProvider.jsx';
 
 const SEX_OPTIONS = [
   { value: 'female',          label: 'Female' },
@@ -162,6 +163,7 @@ function SymptomChecklist({ selected, onChange }) {
 
 export default function BookAppointment() {
   useDocumentTitle('Book appointment');
+  const { user } = useAuth();
   const [form, setForm] = useState(initialForm);
   const [errors, setErrors] = useState({});
   const [result, setResult] = useState(null);
@@ -192,7 +194,22 @@ export default function BookAppointment() {
   });
 
   const mutation = useMutation({
-    mutationFn: (payload) => api.post('/appointments/guest', payload).then((r) => r.data),
+    mutationFn: (payload) => {
+      // Logged-in patients book against the authenticated endpoint so the
+      // appointment is linked to their account (enables tele-consult, the
+      // patient health record, "My prescriptions", etc.). Anonymous bookings
+      // (helpers / shared phones) fall back to the public guest endpoint.
+      if (user) {
+        const authPayload = {
+          clinicId: payload.clinicId,
+          reason: payload.reason,
+          scheduledFor: payload.scheduledFor,
+          selfReportedSymptoms: payload.selfReportedSymptoms,
+        };
+        return api.post('/appointments', authPayload).then((r) => r.data);
+      }
+      return api.post('/appointments/guest', payload).then((r) => r.data);
+    },
     onSuccess: (data) => {
       setResult(data);
       setSubmittedForm({ ...form, clinicName: selectedClinic?.name, clinicAddress: selectedClinic?.address });
